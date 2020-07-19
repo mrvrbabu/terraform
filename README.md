@@ -16,3 +16,5 @@ $ terraform stage list  #
 
 $ terraform destroy      # To destroy the infra 
 
+
+$ Run "sudo nohup python /tmp/app.py > log.txt 2>&1 & " to start the flask server and can be access on public ip and port 8080
