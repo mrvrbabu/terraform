@@ -38,7 +38,14 @@ resource "aws_instance" "kubemaster01" {
       "sudo echo \"deb http://apt.kubernetes.io/ kubernetes-xenial main\" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list && sudo apt-get update",
       "sudo swapoff -a",
       "sudo apt-get install kubernetes-cni=0.7.5-00 -y",
-      "sudo apt-get install -y kubeadm=1.14.2-00 kubectl=1.14.2-00 kubelet=1.14.2-00"
+      "sudo apt-get install -y kubeadm=1.14.2-00 kubectl=1.14.2-00 kubelet=1.14.2-00",
+      "MASTERIP=`hostname -i`",
+      "KUBEVERSION=\"v1.14.2\"",
+      "sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=$MASTERIP --kubernetes-version $KUBEVERSION",
+      "sudo mkdir -p $HOME/.kube",
+      "sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config",
+      "sudo chown $(id -u):$(id -g) $HOME/.kube/config",
+      "sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
     ]
   }
 }
