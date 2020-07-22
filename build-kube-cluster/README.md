@@ -10,7 +10,7 @@ aws_instance.kubemaster01 (remote-exec):     --discovery-token-ca-cert-hash sha2
 3) Expose the deployment expose the port "kubectl expose deployment nginx-server --port=80 --name=nginx-http"
 
 4) Get the svc details "kubectl get svc"
-ubuntu@ip-172-31-73-172:~/.kube$ kubectl get svc -A 
+$ kubectl get svc -A 
 NAMESPACE     NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE
 default       kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP                  6m50s
 default       nginx-http   ClusterIP   10.100.228.159   <none>        80/TCP                   7s
@@ -19,7 +19,7 @@ ubuntu@ip-172-31-73-172:~/.kube$
 
 5) Do curl of ip to verify the connection  
 
-ubuntu@ip-172-31-73-172:~/.kube$ curl -I 10.100.228.159
+$ curl -I 10.100.228.159
 HTTP/1.1 200 OK
 Server: nginx/1.19.1
 Date: Wed, 22 Jul 2020 19:33:08 GMT
