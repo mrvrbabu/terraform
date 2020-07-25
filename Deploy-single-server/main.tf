@@ -10,7 +10,7 @@ resource "aws_instance" "ubuntu" {
   user_data              = <<-EOF
               #!/bin/bash
               echo "Hello, Welcome to the world of terraform....." > index.html
-              nohup busybox httpd -f -p 8081 &
+              nohup busybox httpd -f -p ${var.server_port} &
               EOF
 
 
@@ -24,8 +24,8 @@ resource "aws_security_group" "my_upnrun_8081" {
 
   ingress {
     description = "Webserver port"
-    from_port   = 8081
-    to_port     = 8081
+    from_port   = var.server_port
+    to_port     = var.server_port
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
