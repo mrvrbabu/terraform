@@ -7,5 +7,5 @@ variable "k8s-master-ami" {
 variable "k8s-instance-type" {
     type = string 
     description = "K8s master instance capacity" 
-    default = "t2.micro"
+    default = "t2.medium"
 }
