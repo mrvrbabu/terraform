@@ -1,10 +1,10 @@
-## This terraform module will create a kube cluster with one kube master and two slaves.
+# This terraform module will create a kube cluster with one kube master and two slaves.
 
-# How to create token on kube master 
+## How to create token on kube master 
 
 kubeadm token create --print-join-command
 
-# How to join slaves to master 
+## How to join slaves to master 
 
 Example 
 
