@@ -1,0 +1,16 @@
+aws_token             = "..."
+aws_access_key        = "..."
+aws_organization      = "myhome"
+aws_zone              = "us-east-1a"
+aws_region            = "us-east-1"
+operating_system      = "ubuntu"
+instance_type         = "t2.micro"
+cloudinit_script_name = "cloudinit.sh"
+master_script_initial = "setup_master.sh"
+worker_script_initial = "setup_worker.sh"
+worker                = "worker-1"
+master                = "master-1"
+worker_enabled        = "true"
+master_enabled        = "true"
+allowed_tcp_ports     = ["30111", "30222", "30333", "30444", "22", "6443", "10250", "10251", "10252", "6783", "6784", "2379", "2380"]
+allowed_udp_ports     = ["6783"]
