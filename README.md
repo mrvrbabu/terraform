@@ -1,4 +1,5 @@
 # terraform getting started
+```
 Refer terraform getting started - https://learn.hashicorp.com/terraform/getting-started/build 
 Prerequest = aws account, aws client, aws access key id, Secret Access key
 
@@ -18,3 +19,18 @@ $ terraform destroy      # To destroy the infra
 
 
 $ Run "sudo nohup python /tmp/app.py > log.txt 2>&1 & " to start the flask server and can be access on public ip and port 8080
+
+
+Courtesy
+
+Demo | Three-tier web app in AWS with VPC, ALB, EC2 & RDS
+https://www.youtube.com/watch?v=sCBTeMd0Jj4
+
+terraform backend configuration video
+https://www.youtube.com/watch?v=q5-zsBY90j8
+
+
+Three-tier architecture in AWS using Terraform
+https://www.youtube.com/watch?v=Hl81P5CrBSk
+
+```
